@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculadora INSS e IRRF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Calculadora INSS e IRRF</h2>
+
+    <label for="ano">Ano</label>
+    <select id="ano">
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025" selected>2025</option>
+    </select>
+
+    <label for="mes">Mês</label>
+    <select id="mes">
+      <option value="1">Janeiro</option>
+      <option value="2">Fevereiro</option>
+      <option value="3">Março</option>
+      <option value="4">Abril</option>
+      <option value="5">Maio</option>
+      <option value="6">Junho</option>
+      <option value="7">Julho</option>
+      <option value="8">Agosto</option>
+      <option value="9">Setembro</option>
+      <option value="10">Outubro</option>
+      <option value="11">Novembro</option>
+      <option value="12">Dezembro</option>
+    </select>
+
+    <label for="remuneracao">Remuneração (R$)</label>
+    <input id="remuneracao" type="number" step="0.01" placeholder="Ex.: 5000" />
+
+    <label for="dependentes">Dependentes</label>
+    <input id="dependentes" type="number" step="1" min="0" value="0" />
+
+    <label for="regime">Regime de Previdência</label>
+    <select id="regime">
+      <option value="RGPS" selected>RGPS (INSS)</option>
+      <option value="RPPS">RPPS (Previdência Municipal)</option>
+    </select>
+
+    <div id="campoAliquotaMunicipal" style="display:none;">
+      <label for="aliquotaMunicipal">Alíquota Previdência Municipal (%)</label>
+      <input id="aliquotaMunicipal" type="number" step="0.01" min="0" max="50" value="14" />
+    </div>
+
+    <label>
+      <input id="deducaoSimplificada" type="checkbox" />
+      Usar dedução legal (simplificada)
+    </label>
+
+    <button id="btnCalcular">Calcular</button>
+
+    <h3>Resultado</h3>
+    <pre id="resultado"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
